@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="theme-color" content="#0b1120" />
+  <title>SmartFinBot — AI Financial Agent</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <div class="app" role="application">
+    <header class="header">
+      <div class="header-left">
+        <div class="bot-avatar" aria-hidden="true">💰</div>
+        <div>
+          <h1 class="header-title">SmartFinBot</h1>
+          <p class="header-sub">Asisten keuangan pribadi dengan AI</p>
+        </div>
+      </div>
+
+      <button class="clear-btn" id="clear-btn" title="Hapus riwayat">
+        <span class="clear-icon" aria-hidden="true">🗑</span>
+        <span class="clear-text">Reset</span>
+      </button>
+    </header>
+
+    <aside class="suggestions" aria-label="Saran pertanyaan cepat">
+      <span class="suggestion-label">Coba tanya:</span>
+      <button class="chip" type="button" onclick="sendSuggestion('Berapa harga Bitcoin sekarang?')">📈 Harga Bitcoin</button>
+      <button class="chip" type="button" onclick="sendSuggestion('Konversi 100 USD ke IDR')">💱 Kurs USD</button>
+      <button class="chip" type="button" onclick="sendSuggestion('Kalau aku nabung Rp500rb/bulan selama 3 tahun dengan bunga 6%, dapat berapa?')">🧮 Hitung Tabungan</button>
+      <button class="chip" type="button" onclick="sendSuggestion('Jelaskan apa itu dollar cost averaging')">📚 Edukasi DCA</button>
+      <button class="chip" type="button" onclick="sendSuggestion('Lacak portofolio saya: 0.01 BTC beli di harga Rp800juta, dan 1 ETH beli di Rp50juta')">📊 Cek Portfolio</button>
+    </aside>
+
+    <main class="chat-box" id="chat-box" role="log" aria-live="polite">
+      <div class="message bot-message">
+        <span class="avatar" aria-hidden="true">💰</span>
+        <div class="bubble">
+          Halo! Saya <strong>SmartFinBot</strong>, asisten keuangan pribadi kamu yang didukung AI. 🎉
+          <br /><br />
+          Saya bisa membantu kamu untuk:
+          <ul>
+            <li>📈 Cek harga crypto & kurs real-time</li>
+            <li>🧮 Hitung tabungan, investasi & cicilan</li>
+            <li>📊 Lacak nilai portofolio aset kamu</li>
+            <li>📰 Berita pasar keuangan terkini</li>
+            <li>📚 Edukasi finansial & strategi investasi</li>
+          </ul>
+          Ada yang bisa saya bantu?
+        </div>
+      </div>
+    </main>
+
+    <div class="input-area">
+      <label class="sr-only" for="user-input">Tanya sesuatu</label>
+      <input
+        type="text"
+        id="user-input"
+        placeholder="Tanya sesuatu tentang keuangan..."
+        autocomplete="off"
+      />
+      <button id="send-btn" type="button">Kirim</button>
+    </div>
+
+    <p class="disclaimer">
+      ⚠️ SmartFinBot memberikan edukasi finansial, bukan saran investasi resmi. Selalu lakukan riset mandiri.
+    </p>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
