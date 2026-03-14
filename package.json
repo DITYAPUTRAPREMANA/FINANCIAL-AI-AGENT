@@ -4,6 +4,9 @@
   "description": "AI Financial Agent powered by Gemini with 5+ tools and memory",
   "main": "src/index.js",
   "type": "module",
+  "engines": {
+    "node": ">=18.0.0"
+  },
   "scripts": {
     "start": "node src/index.js",
     "dev": "node --watch src/index.js"

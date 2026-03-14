@@ -141,8 +141,14 @@ app.use((err, req, res, next) => {
   res.status(500).json({ error: "Terjadi kesalahan tak terduga." });
 });
 
-app.listen(PORT, () => {
-  console.log(`\n🤖 SmartFinBot Agent berjalan di http://localhost:${PORT}`);
-  console.log(`📡 Endpoint: POST http://localhost:${PORT}/api/agent`);
-  console.log(`🧠 Memory:   GET  http://localhost:${PORT}/api/agent/memory/:sessionId\n`);
-});
+// Export the app for Vercel serverless deployment
+export default app;
+
+// Only listen if not on Vercel
+if (!process.env.VERCEL_ENV) {
+  app.listen(PORT, () => {
+    console.log(`\n🤖 SmartFinBot Agent berjalan di http://localhost:${PORT}`);
+    console.log(`📡 Endpoint: POST http://localhost:${PORT}/api/agent`);
+    console.log(`🧠 Memory:   GET  http://localhost:${PORT}/api/agent/memory/:sessionId\n`);
+  });
+}

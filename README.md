@@ -137,7 +137,33 @@ http://localhost:3000
 
 ---
 
-## 📡 API Endpoints
+## � Deployment ke Vercel
+
+### 1. Push ke GitHub
+Pastikan kode sudah di-push ke repository GitHub kamu.
+
+### 2. Import ke Vercel
+- Buka [vercel.com](https://vercel.com) dan login
+- Klik "New Project"
+- Import repository GitHub kamu
+- Vercel akan otomatis mendeteksi sebagai Node.js project
+
+### 3. Konfigurasi Environment Variables
+Di dashboard Vercel, tambahkan environment variables:
+
+```
+GEMINI_API_KEY=AIza...kunci_gemini_kamu
+NEWS_API_KEY=...kunci_newsapi_kamu   # opsional
+```
+
+### 4. Deploy
+Klik "Deploy" dan tunggu proses selesai. Aplikasi akan tersedia di URL Vercel yang diberikan.
+
+> **Catatan:** Vercel menggunakan serverless functions, jadi aplikasi akan berjalan optimal untuk traffic rendah hingga sedang.
+
+---
+
+## �📡 API Endpoints
 
 ### `POST /api/agent`
 Mengirim pesan ke agent dan mendapatkan respons AI.
